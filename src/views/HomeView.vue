@@ -10,15 +10,16 @@
         :class="{ 'slide-from-right': isHover, 'hide-from-left': !isHover }"
       ></div>
     </div>
-    <div class="relative image-wrapper">
-      <div class="absolute title-wrapper text-175 text-ffb800 font-bold">We Create</div>
+    <div
+      @mouseover="onHover"
+      @mouseleave="onLeave"
+      class="relative image-wrapper"
+    >
+      <div class="absolute title-wrapper text-175 text-ffb800 font-bold">
+        We Create
+      </div>
       <div class="flex items-center justify-center h-full">
-        <img
-          @mouseover="onHover"
-          @mouseleave="onLeave"
-          class="image"
-          :src="lightBulb"
-        />
+        <img class="image" :src="lightBulb" />
       </div>
       <div class="absolute arrow-wrapper flex items-center">
         <div
