@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+.slide-from-right {
+  animation: slideFromRight 1s ease forwards;
+}
+.hide-from-left {
+  animation: hideFromLeft 1s ease forwards;
+}
+.slide-from-left {
+  animation: slideFromLeft 1s ease forwards;
+}
+.hide-from-right {
+  animation: hideFromRight 1s ease forwards;
+}
+.slide-in {
+  animation: slideIn 1s ease-out forwards;
+}
+.slide-out {
+  animation: slideOut 1s ease-out forwards;
+}
+.right-slide-in {
+  animation: rightSlideIn 1s ease-out forwards;
+}
+.right-slide-out {
+  animation: rightSlideOut 1s ease-out forwards;
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+@keyframes hideFromLeft {
+  from {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  to {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+@keyframes slideFromleft {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+@keyframes hideFromRight {
+  from {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(-500%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-500%);
+  }
+}
+@keyframes rightSlideIn {
+  from {
+    transform: translateX(500%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes rightSlideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(500%);
+  }
+}
