@@ -1,0 +1,10 @@
+:root {
+  --cog-color-orange: #ffb800;
+  --cog-color-white: #ffffff;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Montserrat';
+  background: url('./images/background.png') center/cover no-repeat;
+}

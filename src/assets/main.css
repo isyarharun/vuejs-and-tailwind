@@ -1,13 +1,9 @@
+@import './base.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
 .slide-from-right {
   animation: slideFromRight 1s ease forwards;
 }
@@ -75,33 +71,130 @@
 }
 @keyframes slideIn {
   from {
+    opacity: 0;
     transform: translateX(-500%);
   }
   to {
+    opacity: 1;
     transform: translateX(0);
   }
 }
 @keyframes slideOut {
   from {
+    opacity: 1;
     transform: translateX(0);
   }
   to {
+    opacity: 0;
     transform: translateX(-500%);
   }
 }
 @keyframes rightSlideIn {
   from {
+    opacity: 0;
     transform: translateX(500%);
   }
   to {
+    opacity: 1;
     transform: translateX(0);
   }
 }
 @keyframes rightSlideOut {
   from {
+    opacity: 1;
     transform: translateX(0);
   }
   to {
+    opacity: 0;
     transform: translateX(500%);
+  }
+}
+
+@keyframes expandWidth {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes expandWidth {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slideInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInForward {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes scaleUpCenter {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fill-color {
+  from {
+    -webkit-text-fill-color: var(--cog-color-white);
+  }
+  to {
+    -webkit-text-fill-color: var(--cog-color-orange);
   }
 }

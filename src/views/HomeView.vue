@@ -21,17 +21,23 @@
       <div class="flex items-center justify-center h-full">
         <img class="image" :src="lightBulb" />
       </div>
-      <div class="absolute arrow-wrapper flex items-center">
+      <div
+        @click="toAbout"
+        class="cursor-pointer absolute arrow-wrapper flex items-center"
+      >
         <div
           class="text-72 text-ffb800 font-bold"
-          :class="{ 'slide-in': isHover, 'slide-out': !isHover }"
+          :class="{
+            'slide-in': isHover,
+            'slide-out': !isHover,
+          }"
         >
           AWESOME THINGS
         </div>
         <div
           :class="{ 'right-slide-in': isHover, 'right-slide-out': !isHover }"
         >
-          <img :src="arrow" />
+          <img class="arrow-image" :src="arrow" />
         </div>
       </div>
     </div>
@@ -52,27 +58,44 @@
 import { ref } from 'vue'
 import lightBulb from '@/assets/images/light-bulb.png'
 import arrow from '@/assets/images/arrow.png'
+import { useRouter } from 'vue-router'
 
-let isHover = ref(false)
+const isHover = ref(false)
+const router = useRouter()
 function onHover() {
   isHover.value = true
 }
 function onLeave() {
   isHover.value = false
 }
+function toAbout() {
+  router.push('/about')
+}
 </script>
 
 <style scoped>
+.home {
+  margin: 50px;
+}
 .image-wrapper {
-  padding: 120px 0;
+  margin: 100px 0;
 }
 .title-wrapper {
-  top: -20px;
+  top: -21%;
+  left: 7%;
   z-index: 2;
 }
+.hide-from-left {
+  animation: hideFromLeft 1s ease forwards;
+}
+.slide-from-right {
+  animation: slideFromRight 1s ease forwards;
+}
 .arrow-wrapper {
-  bottom: 70px;
-  left: 66px;
+  padding: 37px;
+  border-radius: 15px;
+  bottom: -10%;
+  left: 5%;
   gap: 78px;
 }
 .image {

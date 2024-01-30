@@ -6,6 +6,10 @@ export default {
       fontSize: {
         175: '175px',
         72: '72px',
+        64: '64px',
+        40: '40px',
+        36: '36px',
+        24: '24px',
       },
       colors: {
         ffb800: '#FFB800',
