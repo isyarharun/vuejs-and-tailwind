@@ -3,11 +3,11 @@
     <PageTemplate>
       <div class="relative">
         <div class="flex product-wrapper text-64 font-bold">
-          <div id="problem1" class="product-content-wrapper">
+          <div id="problem0" class="product-content-wrapper">
             <div>We Solve Your</div>
             <div class="animate-text">PROBLEM</div>
           </div>
-          <div id="problem2" class="product-content-wrapper">
+          <div id="problem1" class="product-content-wrapper">
             <div>We Know You Have</div>
             <div class="animate-text">PROBLEM</div>
           </div>
@@ -26,6 +26,7 @@ import PageTemplate from '@/components/shared/PageTemplate.vue'
 import PlayerIcon from '@/assets/images/player-icon.svg'
 
 const isLoaded = ref(false)
+const currentScrollIndex = ref(0)
 
 onMounted(async () => {
   await waitOneSecond()
@@ -33,7 +34,12 @@ onMounted(async () => {
 })
 
 function roll() {
-  var targetElement = document.getElementById('problem2')
+  if(currentScrollIndex.value === 0) {
+    currentScrollIndex.value = 1
+  } else {
+    currentScrollIndex.value = 0
+  }
+  var targetElement = document.getElementById(`problem${currentScrollIndex.value}`)
   targetElement.scrollIntoView({
     behavior: 'smooth',
   })
